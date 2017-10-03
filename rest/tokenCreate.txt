@@ -1,0 +1,22 @@
+To create tokens for existing users in the users table,
+run the following command in the python  shell
+
+from django.contrib.auth.models import user
+from rest_framework.authtokens.models import Token
+
+for user in User.objects.all()
+    Token.objects.get_or_create(user=user)
+
+serializing in the terminal
+import from models
+import from serializers
+obj=model.first()
+obj_data=SerializerClass(obj)
+obj_data.data................this displays serialized data
+
+Consider token security such as refreshing it. Maybe, a renewal algorithm such that an account
+will have a new token in  every 10 min
+BasicAuth is needed to log in in order to avail the token since subsequent requests are token authenticated
+basic curl commands:
+curl -H "Authorization: token b1cyvecbucr\6r183r\1\8\648" http://1270.0.1:8000api/Casinos/
+curl -X POST "username: username password: pass" http://1270.0.1:8000/login/
